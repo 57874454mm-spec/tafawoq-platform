@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>التفوق — المنصة</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>التفوق</h1>
+      <nav class="nav">
+        <button class="nav-btn" data-view="home">الرئيسية</button>
+        <button class="nav-btn" data-view="courses">الكورسات</button>
+        <button class="nav-btn" data-view="store">التفوق ستور</button>
+        <button class="nav-btn" data-view="profile">الحساب</button>
+        <button id="nav-admin" class="nav-btn" data-view="admin" style="display:none">لوحة الأدمن</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="view-home" class="view card">
+        <h2>أهلاً بك في منصة التفوّق</h2>
+        <p class="muted">ابحث عن الكورس الذي تريده أو تصفح الكتب في التفوق ستور.</p>
+        <div class="search-row">
+          <input id="search-input" placeholder="ابحث عن كورسات أو كتب..." />
+          <button id="search-btn">بحث</button>
+        </div>
+        <div id="home-courses" class="grid"></div>
+        <hr/>
+        <h3>كتب مميزة</h3>
+        <div id="home-books" class="grid"></div>
+      </section>
+
+      <section id="view-courses" class="view card hidden">
+        <h2>كل الكورسات</h2>
+        <div id="courses-list" class="grid"></div>
+      </section>
+
+      <section id="view-course" class="view card hidden">
+        <button id="back-to-courses" class="secondary">◀ رجوع</button>
+        <div id="course-detail"></div>
+      </section>
+
+      <section id="view-lesson" class="view card hidden">
+        <button id="back-to-course" class="secondary">◀ رجوع للدورة</button>
+        <div id="lesson-detail"></div>
+      </section>
+
+      <section id="view-store" class="view card hidden">
+        <h2>التفوق ستور</h2>
+        <div id="store-list" class="grid"></div>
+      </section>
+
+      <section id="view-profile" class="view card hidden">
+        <div id="auth-area"></div>
+      </section>
+
+      <section id="view-admin" class="view card hidden">
+        <h2>لوحة الأدمن</h2>
+        <div id="admin-area"></div>
+      </section>
+
+      <div id="forms-area"></div>
+
+    </main>
+
+    <footer>
+      <small>منصة التفوق — نسخة MVP. الدفع يدوي عبر Vodafone Cash: 01017365486</small>
+    </footer>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app-full.js"></script>
+</body>
+</html>
